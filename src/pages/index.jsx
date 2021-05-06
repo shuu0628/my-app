@@ -7,13 +7,13 @@ import { useCallback, useEffect } from "react";
 
 
 export default function Home() {
-  // const foo = 1;
+  const foo = 1;
   
-  // const handleClick = useCallback((e) => {
-  //   console.log(e.target.href);
-  //   e.preventDefault();
-  //   alert(foo);
-  // }, []);
+  const handleClick = useCallback((e) => {
+    console.log(e.target.href);
+    e.preventDefault();
+    alert(foo);
+  }, []);
 
   useEffect(() => {
     console.log("マウント時");
