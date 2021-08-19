@@ -5,7 +5,7 @@ import { Footer } from "src/components/Footer";
 import { Main } from "src/components/Main";
 
 export default function About({
-  count,
+  doubleCount,
   isShow,
   handleClick,
   handleDisplay,
@@ -20,9 +20,10 @@ export default function About({
         <title>About Page</title>
       </Head>
       <Header />
-      {isShow ? <h1>{count}</h1> : null}
       <button onClick={handleClick}>ボタン</button>
       <button onClick={handleDisplay}>{isShow ? "非表示" : "表示"}</button>
+      {isShow ? <h1>{doubleCount}</h1> : null}
+      <hr />
       <input type="text" value={text} onChange={handleChange} />
       <button onClick={handleAdd}>追加</button>
       <ul>
