@@ -4,23 +4,16 @@ import useSWR from 'swr'
 
 export const useComment = () => {
   const router = useRouter()
-  const { data: comment, error: commentError } = useSWR(
+  const { data, error } = useSWR(
     router.query.id
       ? `https://jsonplaceholder.typicode.com/comments/${router.query.id}`
       : null,
     fetcher
   )
-  const { data: album, error: albumError } = useSWR(
-    comment?.id
-      ? `https://jsonplaceholder.typicode.com/albums/${comment.id}`
-      : null,
-    fetcher
-  )
 
   return {
-    comment,
-    album,
-    error: commentError || albumError,
-    isLoading: !comment && !commentError && !albumError,
+    data,
+    error,
+    isLoading: !data && !error,
   }
 }
