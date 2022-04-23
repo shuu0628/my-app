@@ -1,6 +1,7 @@
 {
   "javascript.preferences.importModuleSpecifier": "non-relative",
   "editor.formatOnSave": true,
+  "path-intellisense.extensionOnImport": true,
   "editor.quickSuggestions": {
     "strings": true
   }
