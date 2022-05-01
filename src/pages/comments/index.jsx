@@ -1,7 +1,6 @@
 import Head from 'next/head'
-import { Header } from 'src/components/Header'
-import { Comments as CommentsComponent } from 'src/components/Comments'
 import { SWRConfig } from 'swr'
+import { CommentList } from '/src/components/Comment/CommentList'
 import { API_URL } from '/src/utils/const'
 
 export const getStaticProps = async () => {
@@ -27,8 +26,7 @@ const Comments = (props) => {
         <title>Comments Page</title>
       </Head>
       <SWRConfig value={{ fallback }}>
-        <Header />
-        <CommentsComponent />
+        <CommentList />
       </SWRConfig>
     </div>
   )
